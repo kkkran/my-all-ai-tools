@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T20:25:56.989355965+08:00
+
+
+=== HEADERS ===
+Sec-Fetch-Dest: empty
+Sec-Ch-Ua: "Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"
+Referer: http://127.0.0.1:9000/management.html
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://127.0.0.1:9000
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+Connection: keep-alive
+Content-Length: 466
+Sec-Fetch-Mode: cors
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+
+
+=== REQUEST BODY ===
+{"resources":[],"referrer":"http://127.0.0.1:9000/management.html","eventType":1,"firstPaint":320,"firstContentfulPaint":320,"startTime":1780403116321.5,"versions":{"fl":"2024.11.0","js":"2026.5.0","timings":1},"pageloadId":"b261ef48-7f93-4acc-931e-b70e227c4b2c","location":"http://127.0.0.1:9000","nt":"reload","timingsV2":{"nextHopProtocol":"http/1.1","transferSize":2108278,"decodedBodySize":2107978},"dt":"","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","st":2}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Headers: *
+
+

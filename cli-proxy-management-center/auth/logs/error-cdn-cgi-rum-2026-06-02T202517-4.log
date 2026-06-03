@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T20:25:17.175225495+08:00
+
+
+=== HEADERS ===
+Sec-Ch-Ua-Platform: "Windows"
+Accept: */*
+Sec-Fetch-Dest: empty
+Connection: keep-alive
+Content-Type: application/json
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Sec-Fetch-Site: same-origin
+Content-Length: 967
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+Sec-Fetch-Mode: cors
+Sec-Ch-Ua: "Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"
+Origin: http://127.0.0.1:9000
+Referer: http://127.0.0.1:9000/management.html
+Accept-Encoding: gzip, deflate, br, zstd
+Sec-Ch-Ua-Mobile: ?0
+
+
+=== REQUEST BODY ===
+{"memory":{"totalJSHeapSize":39600295,"usedJSHeapSize":36146955,"jsHeapSizeLimit":4294967296},"resources":[],"referrer":"","eventType":1,"firstPaint":0,"firstContentfulPaint":0,"startTime":1780403116321.5,"versions":{"fl":"2024.11.0","js":"2026.5.0","timings":2},"pageloadId":"4310867a-7682-469c-a27a-d15eb408ec5e","location":"http://127.0.0.1:9000/management.html","nt":"reload","timingsV2":{"nextHopProtocol":"http/1.1","domainLookupStart":14.300000190734863,"domainLookupEnd":14.300000190734863,"connectStart":14.300000190734863,"connectEnd":15.199999809265137,"requestStart":15.300000190734863,"responseStart":27.300000190734863,"responseEnd":167.5,"domInteractive":232.5999994277954,"domComplete":246.80000019073486,"loadEventStart":247.39999961853027,"loadEventEnd":247.5,"finalResponseHeadersStart":27.300000190734863,"firstInterimResponseStart":0,"transferSize":2108278,"decodedBodySize":2107978},"dt":"","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","st":2}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Headers: *
+
+

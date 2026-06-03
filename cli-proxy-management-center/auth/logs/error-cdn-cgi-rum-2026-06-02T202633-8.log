@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T20:26:33.894970931+08:00
+
+
+=== HEADERS ===
+Content-Type: application/json
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Ch-Ua-Mobile: ?0
+Accept-Encoding: gzip, deflate, br, zstd
+Referer: http://127.0.0.1:9000/management.html
+Connection: keep-alive
+Origin: http://127.0.0.1:9000
+Content-Length: 1448
+Sec-Ch-Ua: "Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Dest: empty
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+Sec-Fetch-Mode: cors
+
+
+=== REQUEST BODY ===
+{"referrer":"","eventType":3,"versions":{"js":"2026.5.0","fl":"2024.11.0"},"pageloadId":"cfc63611-5542-43f9-8420-ad1a4d013491","location":"http://127.0.0.1:9000/management.html","landingPath":"/management.html","startTime":1780403116321.5,"nt":"reload","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","lcp":{"value":320,"path":"/management.html","element":"div.LoginPage-module__titleRow___9h914>div.LoginPage-module__title___I-LuY","size":18782,"rld":0,"rlt":0,"erd":292.69999980926514,"fp":null},"cls":{"value":0.000032112396570152754,"path":"/management.html","element":"button.btn.btn-ghost.btn-sm.SystemPage-module__tileAction___WKXuS","currentRect":{"x":1617.9652099609375,"y":235.52969360351562,"width":77.8663330078125,"height":38.881187438964844,"top":235.52969360351562,"right":1695.83154296875,"bottom":274.41088104248047,"left":1617.9652099609375},"previousRect":{"x":1593.9801025390625,"y":235.52969360351562,"width":101.85147857666016,"height":38.881187438964844,"top":235.52969360351562,"right":1695.8315811157227,"bottom":274.41088104248047,"left":1593.9801025390625}},"fcp":{"value":320,"path":"/management.html"},"ttfb":{"value":27.300000190734863,"path":"/management.html"},"inp":{"value":80,"path":"/management.html","element":"","name":"pointer","idy":0.39999961853027344,"pdn":39.69999980926514,"pdy":39.90000057220459},"timingsV2":{"nextHopProtocol":"http/1.1","transferSize":2108278,"decodedBodySize":2107978},"dt":"","st":1}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Headers: *
+
+

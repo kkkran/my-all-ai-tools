@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T20:29:45.622357941+08:00
+
+
+=== HEADERS ===
+Origin: http://127.0.0.1:9000
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+Sec-Fetch-Mode: cors
+Content-Type: application/json
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Content-Length: 1432
+Sec-Fetch-Site: same-origin
+Referer: http://127.0.0.1:9000/management.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Connection: keep-alive
+Sec-Ch-Ua: "Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"
+Sec-Fetch-Dest: empty
+
+
+=== REQUEST BODY ===
+{"referrer":"","eventType":3,"versions":{"js":"2026.5.0","fl":"2024.11.0"},"pageloadId":"57b6d5a6-823a-4257-b8e2-833d947b8de2","location":"http://127.0.0.1:9000/management.html","landingPath":"/management.html","startTime":1780403382292.5,"nt":"reload","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","lcp":{"value":348,"path":"/management.html","element":"div.LoginPage-module__titleRow___9h914>div.LoginPage-module__title___I-LuY","size":18782,"rld":0,"rlt":0,"erd":327.19999980926514,"fp":null},"cls":{"value":0.0001569276099778367,"path":"/management.html","element":"","currentRect":{"x":1761.163330078125,"y":311.7772216796875,"width":56.18316650390625,"height":66.41584014892578,"top":311.7772216796875,"right":1817.3464965820312,"bottom":378.1930618286133,"left":1761.163330078125},"previousRect":{"x":1761.163330078125,"y":255.69801330566406,"width":56.18316650390625,"height":66.41584014892578,"top":255.69801330566406,"right":1817.3464965820312,"bottom":322.11385345458984,"left":1761.163330078125}},"fcp":{"value":348,"path":"/management.html"},"ttfb":{"value":20.800000190734863,"path":"/management.html"},"inp":{"value":64,"path":"/management.html","element":"span.SelectionCheckbox-module__box___FRD4m.SelectionCheckbox-module__boxChecked___4lydu","name":"pointer","idy":3.90000057220459,"pdn":0.19999980926513672,"pdy":59.89999961853027},"timingsV2":{"transferSize":300,"decodedBodySize":2107978},"dt":"cache","st":1}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Headers: *
+
+

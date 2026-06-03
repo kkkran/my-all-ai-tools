@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T22:09:24.804038719+08:00
+
+
+=== HEADERS ===
+Connection: keep-alive
+Sec-Ch-Ua: "Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"
+Origin: http://127.0.0.1:9000
+Sec-Fetch-Mode: cors
+Accept-Encoding: gzip, deflate, br, zstd
+Sec-Ch-Ua-Platform: "Windows"
+Content-Length: 1506
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:9000/management.html
+Content-Type: application/json
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+Accept-Language: zh-CN,zh;q=0.9
+Sec-Fetch-Site: same-origin
+Accept: */*
+
+
+=== REQUEST BODY ===
+{"referrer":"","eventType":3,"versions":{"js":"2026.5.0","fl":"2024.11.0"},"pageloadId":"8982add3-a3dc-4b6c-bd24-60a6f99d9859","location":"http://127.0.0.1:9000/management.html","landingPath":"/management.html","startTime":1780402880030.8,"nt":"navigate","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","lcp":{"value":700,"path":"/management.html","element":"div.LoginPage-module__titleRow___9h914>div.LoginPage-module__title___I-LuY","size":18782,"rld":0,"rlt":0,"erd":679.1999998092651,"fp":null},"cls":{"value":0.008457680454992464,"path":"/management.html","element":"#root>div.notification-container>div.notification.error.entering","currentRect":{"x":260.2574157714844,"y":21.19306755065918,"width":311.70294189453125,"height":71.50989532470703,"top":21.19306755065918,"right":571.9603576660156,"bottom":92.70296287536621,"left":260.2574157714844},"previousRect":{"x":260.2574157714844,"y":93.4306869506836,"width":311.70294189453125,"height":71.50989532470703,"top":93.4306869506836,"right":571.9603576660156,"bottom":164.94058227539062,"left":260.2574157714844}},"fcp":{"value":700,"path":"/management.html"},"ttfb":{"value":20.800000190734863,"path":"/management.html"},"inp":{"value":88,"path":"/management.html","element":"div.LoginPage-module__loginCard___OgP-R>button.btn.btn-primary.btn-full","name":"pointer","idy":0.19999980926513672,"pdn":26.100000381469727,"pdy":61.69999980926514},"timingsV2":{"nextHopProtocol":"http/1.1","transferSize":2108278,"decodedBodySize":2107978},"dt":"","st":1}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+

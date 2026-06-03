@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T20:29:41.628230644+08:00
+
+
+=== HEADERS ===
+Accept-Encoding: gzip, deflate, br, zstd
+Connection: keep-alive
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://127.0.0.1:9000
+Content-Type: application/json
+Sec-Ch-Ua: "Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"
+Content-Length: 1333
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+Sec-Ch-Ua-Mobile: ?0
+Referer: http://127.0.0.1:9000/management.html
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+
+
+=== REQUEST BODY ===
+{"referrer":"","eventType":3,"versions":{"js":"2026.5.0","fl":"2024.11.0"},"pageloadId":"da7063de-ae0a-4097-8c30-224b1acf049e","location":"http://127.0.0.1:9000/management.html","landingPath":"/management.html","startTime":1780403377473.4,"nt":"reload","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","lcp":{"value":372,"path":"/management.html","element":"div.LoginPage-module__titleRow___9h914>div.LoginPage-module__title___I-LuY","size":18782,"rld":0,"rlt":0,"erd":359,"fp":null},"cls":{"value":0.000017564131456315976,"path":"/management.html","element":"","currentRect":{"x":1198.90087890625,"y":616.8118286132812,"width":328.2178039550781,"height":15.20792007446289,"top":616.8118286132812,"right":1527.1186828613281,"bottom":632.0197486877441,"left":1198.90087890625},"previousRect":{"x":1198.90087890625,"y":610.1583862304688,"width":328.2178039550781,"height":23.762374877929688,"top":610.1583862304688,"right":1527.1186828613281,"bottom":633.9207611083984,"left":1198.90087890625}},"fcp":{"value":372,"path":"/management.html"},"ttfb":{"value":13,"path":"/management.html"},"inp":{"value":24,"path":"/management.html","element":"div.LoginPage-module__loginCard___OgP-R>button.btn.btn-primary.btn-full","name":"pointer","idy":7,"pdn":0,"pdy":17},"timingsV2":{"transferSize":300,"decodedBodySize":2107978},"dt":"cache","st":1}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Origin: *
+
+

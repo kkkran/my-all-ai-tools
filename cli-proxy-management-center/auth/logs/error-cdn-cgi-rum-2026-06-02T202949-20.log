@@ -1,0 +1,37 @@
+=== REQUEST INFO ===
+Version: v7.1.40
+URL: /cdn-cgi/rum
+Method: POST
+Downstream Transport: http
+Timestamp: 2026-06-02T20:29:49.499393181+08:00
+
+
+=== HEADERS ===
+Sec-Ch-Ua-Mobile: ?0
+Origin: http://127.0.0.1:9000
+Sec-Ch-Ua-Platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+Content-Length: 1215
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Sec-Fetch-Mode: cors
+Sec-Ch-Ua: "Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:9000/management.html
+Connection: keep-alive
+Sec-Fetch-Site: same-origin
+
+
+=== REQUEST BODY ===
+{"referrer":"","eventType":3,"versions":{"js":"2026.5.0","fl":"2024.11.0"},"pageloadId":"b1ea09d7-78a2-414a-8b73-bd29ded026a2","location":"http://127.0.0.1:9000/management.html","landingPath":"/management.html","startTime":1780403386449.7,"nt":"reload","siteToken":"886d8a2f46bc4c2e95a1b306b825a0aa","lcp":{"value":1272,"path":"/management.html","element":"","size":6764,"rld":0,"rlt":0,"erd":1265.3000001907349},"cls":{"value":0.0018815722560490311,"path":"/management.html","element":"div.DashboardPage-module__backgroundOrbs___ZlInx>div.DashboardPage-module__orb2___rkxwt","currentRect":{"x":700.3366088867188,"y":388.87176513671875,"width":266.36578369140625,"height":351.98907470703125,"top":388.87176513671875,"right":966.702392578125,"bottom":740.86083984375,"left":700.3366088867188},"previousRect":{"x":700.3366088867188,"y":370.0519714355469,"width":266.36578369140625,"height":351.98907470703125,"top":370.0519714355469,"right":966.702392578125,"bottom":722.0410461425781,"left":700.3366088867188}},"fcp":{"value":808,"path":"/management.html"},"ttfb":{"value":6.699999809265137,"path":"/management.html"},"inp":{"value":-1},"timingsV2":{"transferSize":300,"decodedBodySize":2107978},"dt":"cache","st":1}
+
+
+=== RESPONSE ===
+Status: 404
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+
