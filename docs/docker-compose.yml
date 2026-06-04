@@ -1,0 +1,8 @@
+services:
+  docs:
+    build: .
+    image: api-docs:local
+    container_name: api-docs
+    restart: unless-stopped
+    ports:
+      - "8888:80"
