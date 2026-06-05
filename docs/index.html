@@ -184,8 +184,9 @@
 <nav>
   <div class="logo"><span class="dot"></span>API 中转站</div>
   <a href="#overview" class="active">概览</a>
+  <div class="section-title">资源</div>
+  <a href="#ai-tools">AI 工具汇总</a>
   <div class="section-title">快速开始</div>
-  <a href="#install-codex">安装 Codex</a>
   <a href="#recharge">充值额度</a>
   <a href="#create-key">创建 API Key</a>
   <a href="#ccswitch">导入 CCSwitch</a>
@@ -194,7 +195,6 @@
   <a href="#models">可用模型</a>
   <a href="#pricing">定价说明</a>
   <div class="section-title">参考</div>
-  <a href="#endpoints">API 端点</a>
   <a href="#errors">错误码</a>
   <a href="#faq">常见问题</a>
 </nav>
@@ -238,36 +238,24 @@
 </div>
 
 <!-- ──────────────────────────────────────────── -->
-<h2 id="install-codex">安装 Codex</h2>
+<h2 id="ai-tools">AI 工具汇总</h2>
 
-<p>Codex 是 OpenAI 推出的 AI 编程助手 CLI 工具。以下是安装步骤：</p>
+<p>整理了一份 AI 工具合集，包含各类实用 AI 软件、插件、脚本等资源，持续更新中。</p>
 
-<h3>macOS / Linux</h3>
-<pre><code># 通过 Homebrew 安装
-brew install openai/tap/codex
+<h3>下载方式</h3>
 
-# 或通过 npm 全局安装
-npm install -g @openai/codex
+<div class="step">
+  <div class="step-num">📦</div>
+  <div class="step-content">
+    <h4>百度网盘</h4>
+    <p>
+      链接：<a href="https://pan.baidu.com/s/15SZDdzL6eAztJAcab81P0g?pwd=d26y" target="_blank">https://pan.baidu.com/s/15SZDdzL6eAztJAcab81P0g</a><br>
+      提取码：<code>d26y</code>
+    </p>
+  </div>
+</div>
 
-# 验证安装
-codex --version</code></pre>
-
-<h3>Windows</h3>
-<pre><code># 通过 winget 安装
-winget install OpenAI.Codex
-
-# 或通过 npm 全局安装
-npm install -g @openai/codex
-
-# 验证安装
-codex --version</code></pre>
-
-<h3>配置中转站</h3>
-<p>安装完成后，配置 Codex 指向中转站：</p>
-<pre><code>codex config set base_url https://yeshijie.top/v1
-codex config set api_key sk-你的API密钥</code></pre>
-
-<div class="tip"><strong>提示：</strong>Base URL 末尾的 <code>/v1</code> 不能遗漏，否则 API 路径会拼接错误。</div>
+<div class="tip"><strong>提示：</strong>链接失效请联系管理员更新，资源仅供学习交流使用。</div>
 
 <!-- ──────────────────────────────────────────── -->
 <h2 id="recharge">充值额度</h2>
@@ -350,27 +338,6 @@ API Key:  sk-你的密钥</code></pre>
 <p class="img-title">▲ 在 Codex 中切换不同模型</p>
 
 <p>完整模型列表可在中转站管理后台 → 渠道管理 → 各渠道的模型标签页查看。</p>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="endpoints">API 端点</h2>
-
-<pre><code># 模型列表
-GET  /v1/models
-
-# 文本对话（支持流式）
-POST /v1/chat/completions
-
-# 图片生成
-POST /v1/images/generations
-
-# 图片编辑
-POST /v1/images/edits
-
-# Responses API
-POST /v1/responses</code></pre>
-
-<p>所有端点统一使用 Bearer Token 认证：</p>
-<pre><code>Authorization: Bearer sk-你的API密钥</code></pre>
 
 <!-- ──────────────────────────────────────────── -->
 <h2 id="errors">常见错误码</h2>
