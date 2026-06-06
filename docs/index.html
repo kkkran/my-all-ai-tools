@@ -1,406 +1,418 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>API 中转站 - 官方文档</title>
-  <link rel="icon" href="icon.png" type="image/png">
-<style>
-  :root {
-    --bg: #0d1117;
-    --card: #161b22;
-    --border: #30363d;
-    --text: #c9d1d9;
-    --muted: #8b949e;
-    --accent: #58a6ff;
-    --green: #3fb950;
-    --orange: #d2991d;
-    --red: #f85149;
-    --code-bg: #1c2128;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    display: flex;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网站安装流程</title>
+  <style>
+    :root {
+      --bg: #f3f0ea;
+      --card: #fffdf9;
+      --line: #d8d1c6;
+      --text: #2f2b25;
+      --muted: #6d675e;
+      --accent: #6f7c67;
+      --accent-soft: #e9ede5;
+    }
 
-  /* ── Sidebar ── */
-  nav {
-    width: 260px;
-    min-width: 260px;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    background: var(--card);
-    border-right: 1px solid var(--border);
-    padding: 24px 20px;
-    overflow-y: auto;
-    flex-shrink: 0;
-  }
-  nav .logo {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  nav .logo .dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 6px var(--green);
-  }
-  nav a {
-    display: block;
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 13px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    margin-bottom: 2px;
-    transition: all .15s;
-  }
-  nav a:hover, nav a.active { color: var(--text); background: rgba(88,166,255,.08); }
-  nav .section-title {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    margin: 18px 0 8px;
-    padding: 0 10px;
-  }
+    * { box-sizing: border-box; }
 
-  /* ── Main ── */
-  main {
-    flex: 1;
-    max-width: 860px;
-    padding: 40px 48px 80px;
-    min-height: 100vh;
-  }
-  h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
-  h2 {
-    font-size: 22px; font-weight: 600;
-    margin: 44px 0 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  h3 { font-size: 16px; font-weight: 600; margin: 24px 0 10px; }
-  p { margin-bottom: 14px; font-size: 15px; }
-  a { color: var(--accent); }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-  /* Code */
-  code {
-    font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
-    background: var(--code-bg);
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-size: 13px;
-    color: var(--orange);
-  }
-  pre {
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
-    overflow-x: auto;
-    margin-bottom: 16px;
-    font-size: 13px;
-    line-height: 1.6;
-    position: relative;
-  }
-  pre code { background: none; padding: 0; color: var(--text); }
-  .copy-btn {
-    position: absolute; top: 8px; right: 12px;
-    background: var(--card); border: 1px solid var(--border);
-    color: var(--muted); font-size: 11px; padding: 3px 10px;
-    border-radius: 4px; cursor: pointer;
-  }
-  .copy-btn:hover { color: var(--text); border-color: var(--accent); }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-  /* Steps */
-  .step {
-    display: flex; gap: 16px; margin-bottom: 20px;
-    padding: 18px; border: 1px solid var(--border);
-    border-radius: 10px; background: var(--card);
-  }
-  .step-num {
-    width: 36px; height: 36px; min-width: 36px;
-    border-radius: 50%; background: var(--accent);
-    color: #fff; font-weight: 700; font-size: 16px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .step-content { flex: 1; }
-  .step-content h4 { font-size: 15px; margin-bottom: 4px; }
-  .step-content p { font-size: 14px; color: var(--muted); margin: 0; }
+    .page {
+      width: min(860px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
 
-  /* Tips */
-  .tip {
-    border-left: 3px solid var(--accent);
-    background: rgba(88,166,255,.06);
-    padding: 12px 16px; border-radius: 0 6px 6px 0;
-    margin-bottom: 16px; font-size: 14px;
-  }
-  .tip strong { color: var(--accent); }
-  .warn {
-    border-left: 3px solid var(--orange);
-    background: rgba(210,153,29,.06);
-    padding: 12px 16px; border-radius: 0 6px 6px 0;
-    margin-bottom: 16px; font-size: 14px;
-  }
-  .warn strong { color: var(--orange); }
+    .hero {
+      margin-bottom: 20px;
+      padding: 22px 22px 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+    }
 
-  /* Tables */
-  table {
-    width: 100%; border-collapse: collapse;
-    margin-bottom: 16px; font-size: 14px;
-  }
-  th, td {
-    padding: 10px 14px; text-align: left;
-    border: 1px solid var(--border);
-  }
-  th { background: var(--code-bg); font-weight: 600; font-size: 13px; }
-  tr:hover td { background: rgba(88,166,255,.03); }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
 
-  /* Images */
-  img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin: 12px 0; display: block; }
-  .img-title { font-size: 12px; color: var(--muted); margin-top: -8px; margin-bottom: 18px; text-align: center; }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    body { flex-direction: column; }
-    nav { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
-    main { padding: 24px 20px 60px; }
-  }
-</style>
+    .flow {
+      position: relative;
+      padding-left: 72px;
+    }
+
+    .flow::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: #c8c0b4;
+    }
+
+    .step {
+      position: relative;
+      margin-bottom: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+    }
+
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: -72px;
+      top: 18px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      left: -49px;
+      top: 31px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+    }
+
+    .step-head {
+      margin-bottom: 12px;
+    }
+
+    .step-head strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .step-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .shot {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .shot img {
+      width: 100%;
+      height: auto;
+      cursor: zoom-in;
+    }
+
+    .contact {
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+    }
+
+    .contact strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .contact p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(35, 31, 27, 0.82);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-panel {
+      width: min(1100px, 100%);
+      max-height: calc(100vh - 32px);
+      overflow: hidden;
+      border-radius: 18px;
+      background: #1f1c18;
+    }
+
+    .lightbox-panel img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      cursor: zoom-out;
+    }
+
+    .lightbox-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      color: #f4efe6;
+      font-size: 14px;
+    }
+
+    .lightbox-bar p {
+      margin: 0;
+      color: #d4ccbf;
+    }
+
+    .close {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: transparent;
+      color: #fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 14px, 860px);
+      }
+
+      .flow {
+        padding-left: 58px;
+      }
+
+      .flow::before {
+        left: 18px;
+      }
+
+      .step::before {
+        left: -58px;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        font-size: 13px;
+      }
+
+      .step::after {
+        left: -39px;
+        top: 30px;
+      }
+
+      .step {
+        padding: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <main class="page">
+    <section class="hero">
+      <h1>网站安装流程</h1>
+      <p>按图片顺序从上往下操作。每一步只看当前截图即可。</p>
+    </section>
 
-<nav>
-  <div class="logo"><span class="dot"></span>API 中转站</div>
-  <a href="#overview" class="active">概览</a>
-  <div class="section-title">资源</div>
-  <a href="#ai-tools">AI 工具汇总</a>
-  <div class="section-title">快速开始</div>
-  <a href="#recharge">充值额度</a>
-  <a href="#create-key">创建 API Key</a>
-  <a href="#ccswitch">导入 CCSwitch</a>
-  <a href="#test-connection">测试连接</a>
-  <div class="section-title">模型 & 价格</div>
-  <a href="#models">可用模型</a>
-  <a href="#pricing">定价说明</a>
-  <div class="section-title">参考</div>
-  <a href="#errors">错误码</a>
-  <a href="#faq">常见问题</a>
-</nav>
+    <section class="flow">
+      <article class="step" data-step="01">
+        <div class="step-head">
+          <strong>步骤 01 下载 Codex</strong>
+          <p>先在电脑商店里搜索并安装 Codex。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/ccb239c48f978e66b1a64d9ec6587205.jpg" alt="步骤 01 下载 Codex" data-caption="先安装 Codex。"></div>
+      </article>
 
-<main>
+      <article class="step" data-step="02">
+        <div class="step-head">
+          <strong>步骤 02 下载 CC Switch</strong>
+          <p>继续安装 CC Switch，后面要用它接入供应商。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/2d74209a69d5c43534b8915cb7f3dd8a.jpg" alt="步骤 02 下载 CC Switch" data-caption="继续安装 CC Switch。"></div>
+      </article>
 
-<h1>API 中转站 官方文档</h1>
-<p style="color:var(--muted);font-size:15px;margin-bottom:32px;">
-  基于 OpenAI 兼容协议的 API 代理服务，支持 GPT-5 系列、Codex、DeepSeek 等模型。
-  一行命令即可接入，零门槛使用顶尖 AI 模型。
-</p>
+      <article class="step" data-step="03">
+        <div class="step-head">
+          <strong>步骤 03 注册网站账号</strong>
+          <p>进入网站后先注册或登录自己的账号。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/0a09d16dcfc54bf36ad7e3a0ac4cd91b.jpg" alt="步骤 03 注册网站账号" data-caption="先注册或登录网站账号。"></div>
+      </article>
 
-<!-- ──────────────────────────────────────────── -->
-<h2 id="overview">概览</h2>
+      <article class="step" data-step="04">
+        <div class="step-head">
+          <strong>步骤 04 充值 Token</strong>
+          <p>登录后台后点击充值，先把额度准备好。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/7e65afe544486bd053f868bf048c3ba0.png" alt="步骤 04 充值 Token" data-caption="进入后台充值 token。"></div>
+      </article>
 
-<p>
-  本中转站对上游多路 AI 模型进行统一代理，提供 <strong>OpenAI 兼容的 API 端点</strong>。
-  你只需一个 API Key，即可访问 ChatGPT、Codex、DeepSeek 等多个模型的文本对话与图片生成能力。
-</p>
+      <article class="step" data-step="05">
+        <div class="step-head">
+          <strong>步骤 05 进入令牌管理</strong>
+          <p>找到令牌管理，再点击添加令牌。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/76b0bacf1c8c8e04d757062543dc8aaa.jpg" alt="步骤 05 进入令牌管理" data-caption="进入令牌管理并添加令牌。"></div>
+      </article>
 
-<div class="step">
-  <div class="step-num">1</div>
-  <div class="step-content">
-    <h4>获取 API Key</h4>
-    <p>在中转站管理后台创建令牌，获得 <code>sk-xxxx</code> 格式的密钥。</p>
+      <article class="step" data-step="06">
+        <div class="step-head">
+          <strong>步骤 06 创建令牌</strong>
+          <p>填写名称、分组和模型，然后提交。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/96f8a805c315b842bbff104043dcfe15.jpg" alt="步骤 06 创建令牌" data-caption="填写令牌信息并提交。"></div>
+      </article>
+
+      <article class="step" data-step="07">
+        <div class="step-head">
+          <strong>步骤 07 选择模型</strong>
+          <p>如果弹出模型选择窗口，按提示选择要用的模型。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/c3f4e70997ef654ae345249c549ccb83.jpg" alt="步骤 07 选择模型" data-caption="选择要使用的模型。"></div>
+      </article>
+
+      <article class="step" data-step="08">
+        <div class="step-head">
+          <strong>步骤 08 分配给 CC Switch</strong>
+          <p>把保存好的令牌分配给 CC Switch 使用。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/f5f5674bdfb95047f51ebdd9e2746353.jpg" alt="步骤 08 分配给 CC Switch" data-caption="把令牌分配给 CC Switch。"></div>
+      </article>
+
+      <article class="step" data-step="09">
+        <div class="step-head">
+          <strong>步骤 09 复制密钥</strong>
+          <p>把这把密钥复制好，后面还要继续填写。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/07ad96eb7ec75b1e493084162a6adb26.png" alt="步骤 09 复制密钥" data-caption="复制生成好的密钥。"></div>
+      </article>
+
+      <article class="step" data-step="10">
+        <div class="step-head">
+          <strong>步骤 10 新增供应商</strong>
+          <p>在 CC Switch 里切到 Codex，再点右上角加号。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/36403d693087878722ea70c93c9e01a2.png" alt="步骤 10 新增供应商" data-caption="在 CC Switch 中新增供应商。"></div>
+      </article>
+
+      <article class="step" data-step="11">
+        <div class="step-head">
+          <strong>步骤 11 填写供应商信息</strong>
+          <p>官网地址、密钥和请求地址依次填好，请求地址记得补 <code>/v1</code>。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/26a15951045cfdc92664884d7a9a02f8.png" alt="步骤 11 填写供应商信息" data-caption="填写官网地址、API Key 和 /v1 请求地址。"></div>
+      </article>
+
+      <article class="step" data-step="12">
+        <div class="step-head">
+          <strong>步骤 12 测试是否可用</strong>
+          <p>保存后点测试，确认供应商已经可以正常使用。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/f0a471ac9652a2a6fc661c13037b4aee.png" alt="步骤 12 测试是否可用" data-caption="测试供应商是否可用。"></div>
+      </article>
+
+      <article class="step" data-step="13">
+        <div class="step-head">
+          <strong>步骤 13 把密钥填回 Codex</strong>
+          <p>最后把复制好的密钥粘贴到 Codex，点击继续。</p>
+        </div>
+        <div class="shot"><img src="https://i.imgs.ovh/2026/06/07/20f517a96d4f96406c1473529a302770.png" alt="步骤 13 把密钥填回 Codex" data-caption="把密钥填回 Codex，完成配置。"></div>
+      </article>
+    </section>
+
+    <section class="contact">
+      <strong>管理员联系方式</strong>
+      <p>微信：待补充 ｜ QQ：待补充 ｜ 邮箱：待补充</p>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="图片预览">
+      <img id="lightbox-image" src="" alt="">
+      <div class="lightbox-bar">
+        <p id="lightbox-caption"></p>
+        <button class="close" id="lightbox-close" type="button">关闭</button>
+      </div>
+    </div>
   </div>
-</div>
-<div class="step">
-  <div class="step-num">2</div>
-  <div class="step-content">
-    <h4>配置客户端</h4>
-    <p>将 Base URL 和 API Key 填入 Codex、CCSwitch 或任意 OpenAI 兼容客户端。</p>
-  </div>
-</div>
-<div class="step">
-  <div class="step-num">3</div>
-  <div class="step-content">
-    <h4>开始调用</h4>
-    <p>选择模型，发送对话请求，即可获得 AI 回复。</p>
-  </div>
-</div>
 
-<!-- ──────────────────────────────────────────── -->
-<h2 id="ai-tools">AI 工具汇总</h2>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxClose = document.getElementById("lightbox-close");
 
-<p>整理了一份 AI 工具合集，包含各类实用 AI 软件、插件、脚本等资源，持续更新中。</p>
-
-<h3>下载方式</h3>
-
-<div class="step">
-  <div class="step-num">📦</div>
-  <div class="step-content">
-    <h4>百度网盘</h4>
-    <p>
-      链接：<a href="https://pan.baidu.com/s/15SZDdzL6eAztJAcab81P0g?pwd=d26y" target="_blank">https://pan.baidu.com/s/15SZDdzL6eAztJAcab81P0g</a><br>
-      提取码：<code>d26y</code>
-    </p>
-  </div>
-</div>
-
-<div class="tip"><strong>提示：</strong>链接失效请联系管理员更新，资源仅供学习交流使用。</div>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="recharge">充值额度</h2>
-
-<p>进入中转站管理后台，点击左侧 <strong>"充值"</strong>，选择充值方式并完成支付。</p>
-
-<div class="tip"><strong>支持方式：</strong> 支付宝 / 微信 / PayPal / 卡密兑换，具体以站点实际配置为准。</div>
-
-<img src="https://picui.ogmua.cn/s1/2026/06/04/6a211d1694cf8.webp" alt="充值.png" title="充值.png" />
-<p class="img-title">▲ 充值页面</p>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="create-key">创建 API Key</h2>
-
-<p>点击左侧 <strong>"令牌管理"</strong> → 右上角 <strong>"添加令牌"</strong>：</p>
-
-<table>
-  <tr><th>字段</th><th>说明</th><th>示例</th></tr>
-  <tr><td>名称</td><td>给 Key 起个名字</td><td><code>我的专用 Key</code></td></tr>
-  <tr><td>分组</td><td>选择可用模型分组</td><td><code>default</code></td></tr>
-  <tr><td>额度</td><td>不限或设上限</td><td>✅ 不限额度</td></tr>
-  <tr><td>过期时间</td><td>永不过期或自定义</td><td>永不过期</td></tr>
-  <tr><td>模型限制</td><td>限制此 Key 可用模型</td><td>留空 = 全部可用</td></tr>
-</table>
-
-<img src="https://picui.ogmua.cn/s1/2026/06/04/6a211d1619e2a.webp" alt="添加令牌.png" title="添加令牌.png" />
-<p class="img-title">▲ 令牌管理 - 添加令牌</p>
-
-<div class="warn"><strong>重要：</strong>创建后会短暂显示完整 Key（<code>sk-xxxx...</code>），请立即保存。关闭后无法再次查看完整 Key。</div>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="ccswitch">导入 CCSwitch</h2>
-
-<p>CCSwitch 是 Claude / Codex / Gemini 的多账号快速切换工具，内置 CLIProxyAPI 集成。</p>
-
-<h3>方法一：从令牌管理一键导入（推荐）</h3>
-<p>在"令牌管理"列表中找到你的 Key → 点击右侧 <strong>▼（倒三角）</strong> → 选择 <strong>"导入到 CCSwitch"</strong>。</p>
-
-<img src="https://picui.ogmua.cn/s1/2026/06/04/6a211d163b5ca.webp" alt="导入.png" title="导入.png" />
-<p class="img-title">▲ 点击倒三角 → 导入到 CCSwitch</p>
-
-<h3>方法二：手动配置 CCSwitch</h3>
-<pre><code># 在 CCSwitch 中添加渠道
-渠道类型: OpenAI 兼容
-Base URL: https://你的域名/v1
-API Key:  sk-你的密钥</code></pre>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="test-connection">测试连接</h2>
-
-<img src="https://picui.ogmua.cn/s1/2026/06/04/6a211de21b604.webp" alt="CC管理面板.png" title="CC管理面板.png" />
-<p class="img-title">▲ CCSwitch 渠道管理面板</p>
-
-<p>找到导入的渠道，点击 <strong>"测试连接"</strong>：</p>
-
-<table>
-  <tr><th>结果</th><th>含义</th></tr>
-  <tr><td>✅ 绿色成功</td><td>API 连通，可正常使用</td></tr>
-  <tr><td>❌ 红色失败</td><td>检查网络、Base URL 和 Key</td></tr>
-</table>
-
-<p>也可用命令行测试：</p>
-<pre><code>curl -s https://你的域名/v1/models \
-  -H "Authorization: Bearer sk-你的密钥"</code></pre>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="models">可用模型</h2>
-
-<table>
-  <tr><th>模型 ID</th><th>来源</th><th>用途</th></tr>
-  <tr><td><code>gpt-5.3</code></td><td>ChatGPT Plus</td><td>文本对话、代码生成</td></tr>
-  <tr><td><code>gpt-5.4</code></td><td>ChatGPT Plus</td><td>文本对话、代码生成</td></tr>
-  <tr><td><code>deepseek-chat</code></td><td>DeepSeek</td><td>文本对话</td></tr>
-  <tr><td><code>gpt-image-2</code></td><td>ChatGPT Plus/Pro</td><td>图片生成</td></tr>
-  <tr><td><code>codex-gpt-image-2</code></td><td>Codex (Plus+)</td><td>Codex 画图</td></tr>
-  <tr><td><code>auto</code></td><td>ChatGPT</td><td>自动选择模型</td></tr>
-</table>
-
-<img src="https://picui.ogmua.cn/s1/2026/06/04/6a211d160e02a.webp" alt="选择不同模型.png" title="选择不同模型.png" />
-<p class="img-title">▲ 在 Codex 中切换不同模型</p>
-
-<p>完整模型列表可在中转站管理后台 → 渠道管理 → 各渠道的模型标签页查看。</p>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="errors">常见错误码</h2>
-
-<table>
-  <tr><th>HTTP 状态</th><th>错误信息</th><th>解决方案</th></tr>
-  <tr><td>401</td><td>Invalid API Key</td><td>检查 Key 是否正确、是否过期</td></tr>
-  <tr><td>403</td><td>模型无权限</td><td>检查令牌的模型限制和分组</td></tr>
-  <tr><td>429</td><td>请求频率过高</td><td>降低并发，稍后重试</td></tr>
-  <tr><td>500</td><td>无可用渠道</td><td>该模型在当前分组中没有可用的上游渠道</td></tr>
-  <tr><td>502</td><td>上游服务不可用</td><td>上游模型服务暂时故障</td></tr>
-</table>
-
-<!-- ──────────────────────────────────────────── -->
-<h2 id="faq">常见问题</h2>
-
-<h3>忘记 API Key 怎么办？</h3>
-<p>Key 创建后仅展示一次。如丢失，请在令牌管理页 <strong>删除旧 Key 重新创建</strong>。</p>
-
-<h3>为什么模型列表是空的？</h3>
-<p>检查分组设置，确认渠道中已添加对应模型，且渠道状态为启用。</p>
-
-<h3>请求超时怎么办？</h3>
-<p>检查中转站服务器状态，长文本生成可能需要较长时间。流式模式建议设置 <code>stream: true</code>。</p>
-
-<h3>Key 泄漏了怎么办？</h3>
-<p>立即在令牌管理页 <strong>删除该 Key</strong>，然后创建新 Key。</p>
-
-<h3>支持哪些客户端？</h3>
-<p>任何支持 OpenAI 兼容 API 的客户端均可使用：CCSwitch、Codex、Cherry Studio、NextChat、LobeChat、OpenCat 等。</p>
-
-</main>
-
-<script>
-// Copy button
-document.querySelectorAll('pre').forEach(block => {
-  const btn = document.createElement('button');
-  btn.className = 'copy-btn';
-  btn.textContent = '复制';
-  btn.addEventListener('click', () => {
-    const code = block.querySelector('code')?.textContent || block.textContent.replace('复制','');
-    navigator.clipboard.writeText(code).then(() => {
-      btn.textContent = '已复制!';
-      setTimeout(() => btn.textContent = '复制', 1500);
-    });
-  });
-  block.appendChild(btn);
-});
-
-// Active nav
-const sections = document.querySelectorAll('h2[id]');
-const links = document.querySelectorAll('nav a');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      links.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
-      if (link) link.classList.add('active');
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      lightboxImage.alt = "";
+      lightboxCaption.textContent = "";
     }
-  });
-}, { rootMargin: '-20% 0px -70% 0px' });
-sections.forEach(s => observer.observe(s));
-</script>
 
+    document.querySelectorAll(".shot img").forEach((img) => {
+      img.addEventListener("click", () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = img.dataset.caption || img.alt || "";
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === lightboxImage) closeLightbox();
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("active")) closeLightbox();
+    });
+  </script>
 </body>
 </html>
